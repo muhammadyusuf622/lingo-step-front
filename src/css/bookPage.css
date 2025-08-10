@@ -119,8 +119,8 @@ body {
 }
 
 .book-info img {
-  width: 600px;
-  height: 120px;
+  width: 80%;
+  height: 250px;
   object-fit: cover;
   border-radius: 4px;
 }
@@ -257,10 +257,6 @@ footer {
     max-width: 900px;
     padding: 18px;
   }
-  .book-info img {
-    width: 500px;
-    height: 100px;
-  }
   .book-header h2 {
     font-size: 22px;
   }
@@ -279,10 +275,6 @@ footer {
   .writing-container {
     max-width: 90vw;
     padding: 12px;
-  }
-  .book-info img {
-    width: 350px;
-    height: 80px;
   }
   .book-header h2 {
     font-size: 20px;
