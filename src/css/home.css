@@ -294,7 +294,7 @@ footer {
 
 .report-box {
   width: 300px;
-  max-width: 100vw;
+  max-width: 400px;
   height: 700px;
   background-color: #333;
   position: fixed;
@@ -309,6 +309,12 @@ footer {
   display: none;
   transition: all 0.3s ease;
   overflow-y: scroll;
+  scrollbar-width: none; 
+  -ms-overflow-style: none;
+}
+
+.report-box::-webkit-scrollbar {
+  display: none;
 }
 
 .user-box,
