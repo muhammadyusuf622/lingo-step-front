@@ -1,0 +1,352 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Georgia', serif;
+}
+
+body {
+    background-color: #eaebec;
+    color: #333;
+    margin-bottom: 110px;
+    margin-top: 110px;
+}
+
+.navbar {
+    height: 70px;
+    background: linear-gradient(135deg, #ff6a00, #ee0979);
+    padding: 15px;
+    display: flex;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.navbar h1 a {
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+}
+
+.navbar-img-box {
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 4px 8px;
+  border-radius: 12px;
+  height: 60px;
+  transition: all 0.3s ease;
+}
+
+.navbar-img-box img {
+  height: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.navbar-img-box:hover img {
+  transform: scale(1.05); /* Hover effekt */
+}
+
+.nav-title{
+ display: flex;
+ align-items: center;
+}
+
+.container{
+  margin: 50px auto auto auto;
+  width: 1150px;
+}
+
+.books{
+  background-color: white;
+  border-radius: 10px;
+  width: 1150px;
+  height: auto;
+  padding: 20px;
+  padding-left: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+}
+
+.book{
+  width: 300px;
+  height: 180px;
+  background-color:#F44336;
+  border-radius: 10px;
+  color: white;
+  font-weight: 300;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.book img{
+  width: 300px;
+}
+
+.book:hover{
+  transform: scale(1.05);
+}
+
+.book div{
+  width: 300px;
+  height: 150px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.book-title{
+  color: #F44336;
+  margin-bottom: 10px;
+}
+
+
+.book h3{
+  margin-top: 3px;
+  text-align: center;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    margin-top: 20px;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+}
+
+footer a {
+  color: aqua;
+}
+
+/* ========================================================== */
+/* MEDIYA SO'ROVLARI (RESPONSIVLIK UCHUN) */
+/* ========================================================== */
+
+/* Ekran kengligi 1200px va undan kichik bo'lganda (Katta ekranlar uchun moslashuv) */
+@media (max-width: 1200px) {
+    .container {
+        width: 95%; /* Konteyner kengligini foizga o'tkazish */
+        margin: 50px auto 20px auto; /* Pastki marginni footerga joy qoldirish uchun moslash */
+    }
+
+    .books {
+        width: 100%; /* Konteynerning to'liq kengligini egallash */
+        padding: 20px; /* Paddingni to'g'irlash */
+        padding-left: 20px; /* Asl padding-leftdan kamaytirish */
+        gap: 30px; /* Bo'shliqni kamaytirish */
+        /* Gridni avtomatik moslashuvchan ustunlarga o'tkazish */
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Har bir ustun kamida 280px bo'lsin */
+        justify-items: center; /* Kitoblarni markazga joylash */
+    }
+
+    .book {
+        width: 280px; /* Kitob kartasining kengligini moslash */
+        height: auto; /* Balandlikni avtomatik qilish */
+    }
+
+    .book img {
+        width: 100%; /* Rasmning ota-onasiga moslashishi */
+        height: auto; /* Proportsiyasini saqlash */
+    }
+
+    .book div {
+        width: 100%; /* Kontent divining ota-onasiga moslashishi */
+        height: 120px; /* Balandlikni biroz kamaytirish */
+    }
+}
+
+/* Ekran kengligi 992px va undan kichik bo'lganda (Tabletlar va kichik noutbuklar) */
+@media (max-width: 992px) {
+    body {
+        margin-top: 90px; /* Navbar balandligiga moslash */
+        margin-bottom: 90px; /* Footer balandligiga moslash */
+    }
+
+    .navbar {
+        padding: 10px 15px; /* Navbar paddingini kamaytirish */
+    }
+
+    .navbar h1 a {
+        font-size: 22px;
+    }
+
+    .container {
+        width: 98%; /* Kenglikni biroz oshirish */
+        margin: 30px auto 20px auto; /* Marginlarni moslash */
+    }
+
+    .books {
+        padding: 15px;
+        gap: 25px; /* Bo'shliqni kamaytirish */
+        /* Endi 2 ustunli ko'rinishga o'tish */
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Har bir ustun kamida 250px bo'lsin */
+    }
+
+    .book {
+        width: 250px; /* Kitob kartasining kengligini yanada kamaytirish */
+        height: auto;
+    }
+
+    .book img {
+        width: 100%;
+        height: auto;
+    }
+
+    .book div {
+        width: 100%;
+        height: 100px; /* Balandlikni kamaytirish */
+    }
+
+    .book h3 {
+        font-size: 1.1em;
+    }
+
+    .book-title {
+        font-size: 0.95em;
+        margin-bottom: 5px;
+    }
+
+    footer {
+        padding: 15px;
+        font-size: 0.9em;
+    }
+}
+
+/* Ekran kengligi 768px va undan kichik bo'lganda (Kichik tabletlar va katta smartfonlar) */
+@media (max-width: 768px) {
+    body {
+        margin-top: 80px;
+        margin-bottom: 80px;
+    }
+
+    .navbar {
+        flex-wrap: wrap; /* Navbar elementlarini o'rash */
+        justify-content: center; /* Markazga joylash */
+        padding: 10px;
+    }
+
+    .navbar h1 {
+        width: 100%; /* Sarlavhani to'liq kenglikka yoyish */
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .navbar h1 a {
+        font-size: 20px;
+    }
+
+    .container {
+        margin: 20px auto 15px auto;
+    }
+
+    .books {
+        padding: 10px;
+        gap: 20px; /* Bo'shliqni kamaytirish */
+        /* Endi 1 ustunli ko'rinishga o'tish */
+        grid-template-columns: 1fr; /* Har bir kitob o'z qatorida bo'ladi */
+    }
+
+    .book {
+        width: 90%; /* Kichik ekranlarda kartani kengaytirish */
+        max-width: 320px; /* Ammo juda katta bo'lib ketmasligi uchun max-width qo'shish */
+        margin: 0 auto; /* Kitob kartasini markazga joylash */
+        height: auto;
+    }
+
+    .book img {
+        width: 100%;
+        height: auto;
+    }
+
+    .book div {
+        width: 100%;
+        height: auto; /* Balandlikni avtomatik qilish */
+        min-height: 80px; /* Minimal balandlik berish */
+    }
+
+    .book h3 {
+        font-size: 1em;
+    }
+
+    .book-title {
+        font-size: 0.9em;
+    }
+
+    footer {
+        padding: 10px;
+        font-size: 0.85em;
+    }
+}
+
+/* Ekran kengligi 480px va undan kichik bo'lganda (Mobil qurilmalar) */
+@media (max-width: 480px) {
+    body {
+        margin-top: 70px; /* Navbar balandligiga moslash */
+        margin-bottom: 70px; /* Footer balandligiga moslash */
+    }
+
+    .navbar {
+        padding: 8px 10px;
+    }
+
+    .navbar h1 a {
+        font-size: 18px;
+    }
+
+    .books {
+        padding: 5px;
+        gap: 15px;
+    }
+
+    .book {
+        width: 95%; /* Kichik mobil ekranlarda yanada kengaytirish */
+        max-width: 300px; /* Maksimal kenglikni ushlab qolish */
+    }
+
+    .book div {
+        min-height: 70px;
+        padding: 5px; /* Ichki bo'shliqni kamaytirish */
+    }
+
+    .book h3 {
+        font-size: 0.9em;
+    }
+
+    .book-title {
+        font-size: 0.8em;
+    }
+
+    footer {
+        padding: 8px;
+        font-size: 0.75em;
+    }
+}
+
+/* Landshaft yo'nalishdagi mobil qurilmalar uchun qo'shimcha sozlama */
+@media (max-width: 700px) and (orientation: landscape) {
+    .books {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Landshaft mobilarda 2 ustun bo'lishi mumkin */
+        gap: 20px;
+    }
+    .book {
+        width: 200px;
+    }
+    .book img {
+        width: 100%;
+    }
+    .book div {
+        width: 100%;
+        height: 90px;
+    }
+}

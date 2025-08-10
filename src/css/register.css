@@ -1,0 +1,205 @@
+
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-image: url('https://img.freepik.com/premium-photo/headphones-notebook-with-flag-britain-blue-background_587895-454.jpg?semt=ais_items_boosted&w=740');
+  min-height: 100vh;
+  display: flex;
+  justify-content:first baseline;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;           
+  background-position: center center; 
+  background-attachment: fixed;  
+}
+
+.container {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.floating-words {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.word {
+  position: absolute;
+  font-size: 1.5rem;
+  color: #ffffff;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.word:hover {
+  color: #4CAF50;
+  transform: scale(1.2);
+}
+
+.form-wrapper {
+  height: 700px;
+  width: 400px;
+  background-color: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  text-align: center;
+  color: white;
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 70px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: white;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+  margin-bottom: 30px;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #4CAF50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+}
+
+.register-btn {
+  width: 100%;
+  padding: 12px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-bottom: 60px;
+}
+
+.register-btn:hover {
+  background: #45a049;
+}
+
+.social-login {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.social-login p {
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.social-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.google-btn {
+  background: #db4437;
+}
+
+.google-btn:hover {
+  background: #c1352b;
+}
+
+.facebook-btn {
+  background: #3b5998;
+}
+
+.facebook-btn:hover {
+  background: #2f477a;
+}
+
+.github-btn {
+  background: #333;
+}
+
+.github-btn:hover {
+  background: #222;
+}
+
+.register_title{
+  text-decoration: underline;
+  color: #ffffff;
+  margin-top: -50px;
+  margin-bottom: 50px;
+}
+
+.login-link {
+    margin-top: 15px;
+    font-size: 14px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.login-link a {
+    color: #007bff;
+    font-size: 16px;
+}
+
+.errorP{
+  color: red;
+}
+
+
+@media (max-width: 600px) {
+  .container {
+    padding: 15px;
+  }
+
+  .form-wrapper {
+    padding: 20px;
+  }
+
+  .word {
+    font-size: 1rem;
+  }
+
+  .social-buttons {
+    flex-direction: column;
+    gap: 8px;
+  }
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LingoStep - Public Chat</title>
+    <link rel="stylesheet" href="../css/chat.css">
+    <link rel="icon" type="image/x-icon" href="../favicon_io/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon_io/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon_io/favicon-16x16.png" />
+</head>
+<body>
+    <div class="navbar">
+        <h1 class="nav-title">
+            <a href="./homePage.html"><div class="navbar-img-box"><img src="../favicon_io/ChatGPT Image Jul 27, 2025, 08_51_21 PM.png" alt="this lingoStep img"> Lingo Step</div></a>
+        </h1>
+    </div>
+
+    <div class="chat-container">
+        <div class="chat-header">
+            <h2>Public Chat</h2>
+            <p >Talk to other students and share experiences!</p>
+        </div>
+
+        <div class="chat-messages" id="chat-messages">
+            <div class="message incoming">
+                <span class="username">user123</span>
+                <p class="message-text">Hello! I learned new words today, it's very interesting.!</p>
+                <span class="timestamp">2025-06-10 17:00</span>
+            </div>
+            <div class="message outgoing">
+                <p class="message-text">Great! What level are you?</p>
+                <span class="timestamp">2025-06-10 17:02</span>
+            </div>
+            <div class="message incoming">
+                <span class="username">user456</span>
+                <p class="message-text">I'm in level 2, the quizzes are getting harder!</p>
+                <span class="timestamp">2025-06-10 17:05</span>
+            </div>
+        </div>
+
+        <div class="chat-input">
+            <textarea id="message-input" placeholder="Write a message..."></textarea>
+            <button id="send-message">Send</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 LingoStep. all rights reserved</p>
+        <p class="getTelegram">Connect to<a href="https://t.me/openData24_Bot" target="_blank" >Telegram Bot</a></p>
+    </footer>
+
+    <script src="https://cdn.socket.io/4.3.2/socket.io.min.js" integrity="sha384-KAZ4DtjNhLChOB/hxXuKqhMLYvx3b5MlT55xPEiNmREKRzeEm+RVPlTnAn0ajQNs" crossorigin="anonymous"></script>
+    <script type="module" src="../js/chat.js"></script>
+</body>
+</html>

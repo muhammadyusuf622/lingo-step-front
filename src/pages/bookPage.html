@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LingoStep - Writing in a book</title>
+    <link rel="stylesheet" href="../css/bookPage.css">
+    <link rel="icon" type="image/x-icon" href="../favicon_io/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon_io/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon_io/favicon-16x16.png" />
+</head>
+<body>
+    <div class="navbar">
+        <h1 class="nav-title">
+            <a href="./homePage.html"><div class="navbar-img-box"><img src="../favicon_io/ChatGPT Image Jul 27, 2025, 08_51_21 PM.png" alt="this lingoStep img"> Lingo Step</div></a>
+        </h1>
+    </div>
+
+    <div class="writing-container">
+        <div class="book-header">
+            <h2 id="book-name" data-lang-key="book-title">Kitobda yozish</h2>
+            <div class="book-info">
+                <img id="book-cover" alt="Book Cover">
+                <div>
+                    <p id="page-number" data-lang-key="page-number">Page: 1</p>
+                    <audio class="audioUrl" controls ></audio>
+                    <h3 class="addScorWord">Receive 100 points upon completing each page</h3>
+                </div>
+  
+            </div>
+        </div>
+
+        <div class="book-page">
+            <div class="page-content">
+                <div class="text-display" id="text-display">
+                    <!-- Matn harflarga bo‘linib span elementlarida ko‘rsatiladi -->
+                </div>
+                <textarea id="typing-input" data-lang-key="typing-placeholder" placeholder="Write your own book..."></textarea>
+                <h3 id="pastError"></h3>
+                <!-- <button id="play-audio" data-lang-key="play-audio">Audio tinglash</button> -->
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p data-lang-key="footer-copyright">© 2025 LingoStep. All rights reserved.</p>
+        <p class="telegramBot"><a href="https://t.me/openData24_Bot" target="_blank" data-lang-key="footer-telegram">Connect to Telegram Bot</a></p>
+    </footer>
+
+    <script type="module" src="../js/bookPage.js"></script>
+</body>
+</html>

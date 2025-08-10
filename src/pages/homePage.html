@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="icon" type="image/x-icon" href="../favicon_io/favicon.ico" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../favicon_io/favicon-16x16.png"
+    />
+    <title>LingoStep - Ingliz tilini o'rganing</title>
+    <link rel="stylesheet" href="../css/home.css" />
+  </head>
+  <body>
+    <div class="main-content">
+      <div class="navbar">
+        <div class="navbarContainer">
+          <h1 class="nav-title">
+            <div class="navbar-img-box">
+              <img
+                src="../favicon_io/ChatGPT Image Jul 27, 2025, 08_51_21 PM.png"
+                alt="this lingoStep img"
+              />
+              Lingo Step
+            </div>
+          </h1>
+          <div class="nav-links">
+            <select id="language-select">
+              <option value="uz">O‘zbek</option>
+              <option value="ru">Русский</option>
+              <option value="en">English</option>
+            </select>
+            <div class="profilImg">
+              <a href="./profil.html"
+                ><img
+                  id="profilImg"
+                  src="https://cdn-icons-png.freepik.com/256/18238/18238419.png"
+                  alt="profil img"
+              /></a>
+            </div>
+            <div class="contact_admin">
+              <img
+                src="https://png.pngtree.com/png-vector/20220624/ourmid/pngtree-dispatcher-male-communication-personnel-avatar-png-image_5327042.png"
+                alt="admin img"
+              />
+            </div>
+            <div class="report-box">
+              <div class="textUser">
+                <textarea
+                  name="userMessage"
+                  placeholder="what can we do to help"
+                  id=""
+                ></textarea
+                ><span class="fontasmClick"
+                  ><i class="fa-solid fa-paper-plane"></i
+                ></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="hero">
+          <h2 data-lang-key="hero-title">
+            Ingliz tilini oson va qiziqarli o‘rganing!
+          </h2>
+          <p data-lang-key="hero-description">
+            LingoStep bilan o‘z darajangizni tanlang va bugundan boshlang.
+          </p>
+          <div class="slider">
+            <div class="slides">
+              <div class="slide">
+                <img
+                  src="https://images.unsplash.com/photo-1518082593638-b6e73b35d39a?q=80&w=2068&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="Slide 1"
+                />
+              </div>
+              <div class="slide">
+                <img
+                  src="https://plus.unsplash.com/premium_photo-1666739032415-e9997f32603c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="Slide 2"
+                />
+              </div>
+              <div class="slide">
+                <img
+                  src="https://img.freepik.com/free-photo/travel-concept-with-landmarks_23-2149153256.jpg?ga=GA1.1.1475563605.1747901525&semt=ais_items_boosted&w=740"
+                  alt="Slide 3"
+                />
+              </div>
+              <div class="slide">
+                <img
+                  src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2132&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="Slide 4"
+                />
+              </div>
+              <div class="slide">
+                <img
+                  src="https://images.unsplash.com/photo-1565022536102-f7645c84354a?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="Slide 5"
+                />
+              </div>
+              <div class="slide">
+                <img
+                  src="https://images.unsplash.com/photo-1573169790341-483eec303e04?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="Slide 6"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="features">
+          <div style="display: none" class="feature-card">
+            <h3 data-lang-key="feature-lessons">📚 Interaktiv Darslar</h3>
+            <p data-lang-key="feature-lessons-desc">
+              Flashcardlar, videolar va AI yordamida o‘rganing.
+            </p>
+          </div>
+          <div id="quiz_click" class="feature-card">
+            <h3 data-lang-key="feature-tests">🏆 Viktorina</h3>
+            <p data-lang-key="feature-tests-desc">
+              Darajangizni aniqlash va bilimlaringizni sinash.
+            </p>
+          </div>
+          <div id="books_click" class="feature-card">
+            <h3 data-lang-key="feature-gamification">🌟 Kitob Yoz</h3>
+            <p data-lang-key="feature-gamification-desc">
+              Ball to‘plang, medallar yuting va leaderboardda yuqoriga
+              ko‘taring!
+            </p>
+          </div>
+          <div id="chat_click" class="feature-card">
+            <h3 data-lang-key="feature-chat">💬 Ommaviy Chat</h3>
+            <p data-lang-key="feature-chat-desc">
+              Boshqa o‘quvchilar bilan suhbatlashing va tajriba almashing.
+            </p>
+          </div>
+          <div style="display: none" class="feature-card">
+            <h3 data-lang-key="feature-ai">🤖 AI Tutor</h3>
+            <p data-lang-key="feature-ai-desc">
+              Savollaringizga javob oling va matnlaringizni tuzating.
+            </p>
+          </div>
+          <div style="display: none" class="feature-card">
+            <h3 data-lang-key="feature-language">🌍 Til Tanlash</h3>
+            <p data-lang-key="feature-language-desc">
+              O‘zbek, rus va ingliz tillarida o‘rganing.
+            </p>
+          </div>
+          <div id="cardVideo" class="feature-card card-video_chat">
+            <h3 data-lang-key="feature-video">🎥 Video Chat Bepul</h3>
+            <p data-lang-key="feature-vodeo-desc">
+              Do'stlaringiz bilan yuzma-yuz gaplashing, reklamasiz va mutlaqo
+              bepul!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p data-lang-key="footer-copyright">
+        © 2025 LingoStep. Barcha huquqlar himoyalangan.
+      </p>
+      <p class="getTelegram">
+        <a
+          href="https://t.me/openData24_Bot"
+          target="_blank"
+          data-lang-key="footer-telegram"
+          >Telegram Botga ulanish</a
+        >
+      </p>
+    </footer>
+
+    <script type="module" src="../js/home.js"></script>
+  </body>
+</html>

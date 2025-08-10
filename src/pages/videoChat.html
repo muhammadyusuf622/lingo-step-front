@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video Chat</title>
+    <link rel="stylesheet" href="../css/videoChat.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="icon" type="image/x-icon" href="../favicon_io/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon_io/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon_io/favicon-16x16.png" />
+  </head>
+  <body>
+    <div class="video-chat-container">
+      <header class="chat-header">
+        <h1 class="titleName nav-title">
+          <a href="./homePage.html">
+            <div class="navbar-img-box"><img src="../favicon_io/ChatGPT Image Jul 27, 2025, 08_51_21 PM.png" alt="this lingoStep img"> LingoStep </div>
+          </a> <span>Video Chat</span>
+        </h1>
+        <div class="header-icons"></div>
+      </header>
+
+      <main class="video-area">
+        <div class="remote-video-container">
+          <video id="remote-video" autoplay></video>
+          <div class="user-name">Partner</div>
+        </div>
+        <div class="local-video-container">
+          <video id="local-video" autoplay muted></video>
+          <div class="user-name">You</div>
+        </div>
+      </main>
+
+      <aside class="users-sidebar">
+        <h2>Participants</h2>
+        <div id="userList" class="user-list">
+        </div>
+        <h3 class="none-available"></h3>
+      </aside>
+
+      <div class="chat-controls">
+        <button id="call" class="control-btn">
+          <i class="fas fa-phone-alt"></i>Start a video chat
+        </button>
+        <button id="hangup" class="control-btn end-call">
+          <i class="fas fa-phone-slash"></i>Termination
+        </button>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.socket.io/4.3.2/socket.io.min.js"
+      integrity="sha384-KAZ4DtjNhLChOB/hxXuKqhMLYvx3b5MlT55xPEiNmREKRzeEm+RVPlTnAn0ajQNs"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="../js/videoChat.js"></script>
+  </body>
+</html>

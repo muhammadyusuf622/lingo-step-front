@@ -1,0 +1,25 @@
+{
+  "name": "client",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "parcel src/index.html src/pages/*.html --port 7001",
+    "build": "parcel build src/index.html src/pages/*.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.11.0",
+  "devDependencies": {
+    "buffer": "^6.0.3",
+    "nodemon": "^3.1.10",
+    "parcel": "^2.15.2",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "axios": "^1.9.0",
+    "bootstrap": "^5.3.6",
+    "crypto-js": "^4.2.0",
+    "socket.io-client": "^4.8.1"
+  }
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LingoStep - Profil</title>
+    <link rel="stylesheet" href="../css/profil.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image/x-icon" href="../favicon_io/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon_io/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon_io/favicon-16x16.png" />
+</head>
+<body>
+    <div class="navbar">
+        <h1 class="nav-title">
+            <a href="./homePage.html"><div class="navbar-img-box"><img src="../favicon_io/ChatGPT Image Jul 27, 2025, 08_51_21 PM.png" alt="this lingoStep img"> Lingo Step</div></a>
+        </h1>
+        <div class="nav-links">
+            <button id="logout" data-lang-key="logout">Logout</button>
+        </div>
+    </div>
+
+    <div class="profile-container">
+        <div class="profile-header">
+            <div  class="avatar-section">
+                <div class="avatar-wrapper">
+                    <img src="https://cdn-icons-png.freepik.com/256/18238/18238419.png" alt="User Avatar" class="avatar" id="avatar-preview">
+                </div>
+                <p class="errorImg"></p>
+                <input type="file" id="avatar-upload" accept="image/*" style="display: none;">
+                <button class="upload-avatar"><i class="fa-solid fa-camera"></i></button>
+            </div>
+            <div class="user-info">
+                <h2 data-lang-key="username">Username: <span id="username">user123</span></h2>
+                <p data-lang-key="email">Email: <span id="userEmail">user@example.com</span></p>
+                <button class="edit-profile" data-lang-key="edit-profile">Profilni tahrirlash</button>
+            </div>
+        </div>
+
+        <div class="scors">
+          <div class="lesson_level"><p><img src="../images/book.jpeg" alt=""></p></div>
+          <div class=""><p><img src="https://png.pngtree.com/png-clipart/20220910/original/pngtree-quiz-time-png-image_8530811.png" alt=""></p></div>
+          <div><p><img src="../images/score.jpeg" alt=""></p></div>
+        </div>
+
+        <div class="word_score">
+          <div class="w1">Lesson Level: 0</div>
+          <div class="w2">Quiz Level: 0</div>
+          <div class="w3">All Score: 0</div>
+        </div>
+
+
+
+
+    </div>
+
+    <footer>
+        <p data-lang-key="footer-copyright">© 2025 LingoStep. Barcha huquqlar himoyalangan.</p>
+        <p><a href="https://t.me/openData24_Bot" target="_blank" data-lang-key="footer-telegram">Telegram Botga ulanish</a></p>
+    </footer>
+
+    <script type="module" src="../js/profil.js"></script>
+</body>
+</html>
