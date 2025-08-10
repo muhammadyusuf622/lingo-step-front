@@ -179,15 +179,13 @@ body {
 }
 
 footer {
-    text-align: center;
-    padding: 20px;
-    width: 100%;
-    background-color: #333;
-    color: white;
-    margin-top: 20px;
-    position: absolute;
-    bottom: 0;
-
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+  background-color: #333;
+  color: white;
+  margin-top: 20px;
+  position: static;
 }
 
 .titleName a{
@@ -215,72 +213,125 @@ footer {
 }
 
 
-@media (max-width: 600px) {
-    .navbar h1 {
-        font-size: 20px;
-    }
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 24px;
+    z-index: 1000;
+}
 
-    .nav-links {
-        gap: 10px;
-    }
+.confetti {
+    position: fixed;
+    top: 0;
+    width: 10px;
+    height: 10px;
+    background: red;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: confetti-fall 2s ease-out forwards;
+}
 
-    .nav-links a, .nav-links select {
-        font-size: 14px;
-    }
-
-    .writing-container {
-        margin: 10px;
-        padding: 15px;
-    }
-
-    .book-info {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .text-display {
-        font-size: 16px;
-    }
-
-    #typing-input {
-        font-size: 14px;
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) translateX(calc(-50vw + 100vw * var(--randX))) rotate(720deg);
+    opacity: 0;
     }
 }
 
 
-        .modal {
-          display: none;
-          position: fixed;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          background: rgba(0, 0, 0, 0.8);
-          color: white;
-          padding: 20px;
-          text-align: center;
-          border-radius: 10px;
-          font-size: 24px;
-          z-index: 1000;
-      }
 
-      .confetti {
-          position: fixed;
-          top: 0;
-          width: 10px;
-          height: 10px;
-          background: red;
-          border-radius: 50%;
-          opacity: 0.8;
-          animation: confetti-fall 2s ease-out forwards;
-      }
+@media (max-width: 1280px) {
+  .writing-container {
+    max-width: 900px;
+    padding: 18px;
+  }
+  .book-info img {
+    width: 500px;
+    height: 100px;
+  }
+  .book-header h2 {
+    font-size: 22px;
+  }
+  .book-header p {
+    font-size: 15px;
+  }
+  .text-display {
+    font-size: 17px;
+  }
+  #typing-input {
+    font-size: 15px;
+  }
+}
 
-      @keyframes confetti-fall {
-          0% {
-              transform: translateY(0) translateX(0) rotate(0);
-              opacity: 1;
-          }
-          100% {
-              transform: translateY(100vh) translateX(calc(-50vw + 100vw * var(--randX))) rotate(720deg);
-              opacity: 0;
-          }
-      }
+@media (max-width: 1024px) {
+  .writing-container {
+    max-width: 90vw;
+    padding: 12px;
+  }
+  .book-info img {
+    width: 350px;
+    height: 80px;
+  }
+  .book-header h2 {
+    font-size: 20px;
+  }
+  .book-header p {
+    font-size: 14px;
+  }
+  .text-display {
+    font-size: 16px;
+    padding: 6px;
+  }
+  #typing-input {
+    font-size: 14px;
+    padding: 8px;
+  }
+  .book-page {
+    padding: 12px;
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar h1 {
+    font-size: 20px;
+  }
+
+  .nav-links {
+    gap: 10px;
+  }
+
+  .nav-links a,
+  .nav-links select {
+    font-size: 14px;
+  }
+
+  .writing-container {
+    padding: 15px;
+  }
+
+  .book-info {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .text-display {
+    font-size: 16px;
+  }
+
+  #typing-input {
+    font-size: 14px;
+  }
+}
