@@ -1,4 +1,3 @@
-
 /* Container for main page content */
 .container {
   max-width: 1400px;
@@ -295,10 +294,11 @@ footer {
 
 .report-box {
   width: 300px;
-  height: 600px;
+  max-width: 100vw;
+  height: 700px;
   background-color: #333;
   position: fixed;
-  top: 62px;
+  top: 85px;
   right: 10px;
   border-radius: 10px;
   padding: 10px;
@@ -572,8 +572,11 @@ textarea:focus {
 /* Ekran kengligi 600px va undan kichik bo'lganda (Smartfonlar) */
 @media (max-width: 600px) {
   body {
-    margin-top: 4em; /* Navbar balandligiga moslash */
-    margin-bottom: 80px; /* Footer balandligiga moslash */
+    margin-top: 4em;
+    margin-bottom: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
   }
   .navbar h1 {
     font-size: 20px;
@@ -651,6 +654,9 @@ textarea:focus {
   footer {
     padding: 10px;
     font-size: 0.8em;
+    margin-top: auto;
+    margin-top: 50px;
+    width: 100%;
   }
 
   .contact_admin {
@@ -663,14 +669,15 @@ textarea:focus {
   }
 
   .report-box {
-    width: 55%; /* Mobil ekranlarda chat boxni deyarli to'liq kenglikka qilish */
-    height: 70vh; /* Ekran balandligining foizi */
+    width: 200px;
+    max-width: 100vw;
+    height: 70vh;
     top: 75px;
-    right: 2.5%; /* Markazga yaqinroq joylash */
-    margin-left: auto;
-    margin-right: auto;
-    padding-bottom: 60px; /* Pastki input uchun joy */
-    z-index: 1001; /* Navbar va boshqalardan balandroq bo'lishi uchun */
+    right: 10;
+    margin: 0;
+    border-radius: 10px;
+    padding-bottom: 60px;
+    z-index: 1001;
   }
   /* Xabar qutilarini moslash */
   .user-box,
@@ -680,16 +687,13 @@ textarea:focus {
   }
 
   .textUser {
-    width: 55%; /* Textarea joylashuvini moslash */
-    right: 2.5%; /* Markazga yaqinroq joylash */
-    margin-left: auto;
-    margin-right: auto;
-    background-color: #333;
+    width: 200px;
+    right: 10px;
+    top: 545px;
   }
 
   .textUser textarea {
     height: 40px;
-    padding: 6px;
     font-size: 17px;
     padding: 5px;
   }
@@ -700,9 +704,10 @@ textarea:focus {
   }
 }
 
+/* Landshaft yo'nalishdagi mobil qurilmalar uchun qo'shimcha sozlama */
 @media (max-width: 800px) and (orientation: landscape) {
   .slider {
-    height: 200px;
+    height: 200px; /* Landshaft rejimda slider balandligini moslash */
   }
   .slide img {
     height: 200px;
@@ -759,5 +764,13 @@ textarea:focus {
   .slider {
     width: 90%;
     height: 240px;
+  }
+
+  .report-box {
+    height: 500px;
+    top: 90px;
+  }
+  .textUser {
+    bottom: 180px;
   }
 }
