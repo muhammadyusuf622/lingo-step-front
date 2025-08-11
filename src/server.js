@@ -54,5 +54,5 @@ facebook.addEventListener('click', (e) => {
 })
 
 github.addEventListener('click', (e) => {
-  return window.location.href = 'http://localhost:3000/api/auth/github/callback'
+  return (window.location.href = 'https://backend.lingostep.uz/api/auth/github/callback');
 })
