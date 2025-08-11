@@ -132,6 +132,7 @@ body {
   margin: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
 .hero h2 {
@@ -309,7 +310,7 @@ footer {
   display: none;
   transition: all 0.3s ease;
   overflow-y: scroll;
-  scrollbar-width: none; 
+  scrollbar-width: none;
   -ms-overflow-style: none;
 }
 
@@ -575,7 +576,6 @@ textarea:focus {
   }
 }
 
-/* Ekran kengligi 600px va undan kichik bo'lganda (Smartfonlar) */
 @media (max-width: 600px) {
   body {
     margin-top: 4em;
@@ -685,7 +685,7 @@ textarea:focus {
     padding-bottom: 60px;
     z-index: 1001;
   }
-  /* Xabar qutilarini moslash */
+
   .user-box,
   .admin-box {
     width: 90%; /* Xabarlar kengligini moslash */
@@ -799,7 +799,7 @@ textarea:focus {
   }
 
   .report-box {
-    height: 400px;
+    height: 600px;
     top: 100px;
   }
 
@@ -807,7 +807,24 @@ textarea:focus {
     bottom: 100px;
   }
 
-  .contact_admin{
+  .contact_admin {
     bottom: 30px;
+  }
+
+  .slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .slide {
+    display: none;
+    width: 84.5%;
+  }
+
+  .slide img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 8px;
   }
 }
