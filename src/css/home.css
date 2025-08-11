@@ -780,3 +780,34 @@ textarea:focus {
     bottom: 180px;
   }
 }
+
+@media (max-width: 1440px) {
+  .container {
+    max-width: 1200px;
+  }
+  .navbar h1 {
+    font-size: 24px;
+  }
+  .nav-links a {
+    font-size: 16px;
+  }
+  .hero h2 {
+    font-size: 30px;
+  }
+  .hero p {
+    font-size: 18px;
+  }
+
+  .report-box {
+    height: 400px;
+    top: 100px;
+  }
+
+  .textUser {
+    bottom: 100px;
+  }
+
+  .contact_admin{
+    bottom: 30px;
+  }
+}
