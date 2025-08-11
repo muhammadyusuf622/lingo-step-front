@@ -37,81 +37,83 @@ document.addEventListener("DOMContentLoaded", async () => {
   const bookName = document.getElementById("book-name");
   const bookId = localStorage.getItem("bookId");
   const pastError = document.getElementById("pastError");
-  const addScorWord = document.querySelector(".addScorWord");
-  const audioUrl = document.querySelector(".audioUrl");
+  const addScorWord = document.querySelector('.addScorWord');
+  const audioUrl = document.querySelector('.audioUrl');
 
   function createWords(data, img, bookname, pageId) {
-    bookImg.onload = () => {
-      audioUrl.onloadeddata = () => {
-        let currentText = data.page;
-
-        textDisplay.innerHTML = currentText
-          .split("")
-          .map((char) => `<span>${char}</span>`)
-          .join("");
-
-        // Yozish jarayonini boshqarish
-        typingInput.addEventListener("input", async () => {
-          const inputText = typingInput.value;
-          const spans = textDisplay.querySelectorAll("span");
-          let isCorrect = true;
-
-          spans.forEach((span, index) => {
-            span.classList.remove("correct", "incorrect", "current");
-            if (index < inputText.length) {
-              if (inputText[index] === currentText[index]) {
-                span.classList.add("correct");
-              } else {
-                span.classList.add("incorrect");
-                isCorrect = false;
-              }
-            } else if (index === inputText.length) {
-              span.classList.add("current");
-            }
-          });
-
-          if (isCorrect && inputText.length === currentText.length) {
-            const countdown = setInterval(() => {
-              createConfetti();
-              timer--;
-              if (timer < 0) {
-                clearInterval(countdown);
-              }
-            }, 1000);
-
-            addScorWord.textContent =
-              "Well done! 100 points have been added to your score";
-            addScorWord.style.color = "#28a745";
-            setTimeout(() => {
-              addScorWord.textContent =
-                "Receive 100 points upon completing each page";
-              addScorWord.style.color = "#ff6a00";
-            }, 9000);
-
-            await customAxios
-              .post("/pages/getNewPage", { pageId: pageId, bookId: bookId })
-              .then((res) => {
-                if (res.data.message.startsWith("The")) {
-                  alert(res.data.message);
-                }
-                createWords(
-                  res.data?.data,
-                  res.data.bookImg,
-                  res.data.bookName,
-                  res.data.data.id
-                );
-                typingInput.value = "";
-              })
-              .catch((err) => console.log(err.response.data.message));
-          }
-        });
-      };
-      audioUrl.src = data.audio_url;
-    };
+    let currentText = data.page;
 
     bookImg.src = img;
     pageNumber.textContent = `Page: ${data.page_order}`;
     bookName.textContent = bookname;
+    audioUrl.src = data.audio_url
+
+    // Sahifa matnini harflarga bo‘lib ko‘rsatish
+    function displayText(text) {
+      textDisplay.innerHTML = text
+        .split("")
+        .map((char) => `<span>${char}</span>`)
+        .join("");
+    }
+
+    // Yozish jarayonini boshqarish
+    typingInput.addEventListener("input", async () => {
+      const inputText = typingInput.value;
+      const spans = textDisplay.querySelectorAll("span");
+      let isCorrect = true;
+
+      spans.forEach((span, index) => {
+        span.classList.remove("correct", "incorrect", "current");
+        if (index < inputText.length) {
+          if (inputText[index] === currentText[index]) {
+            span.classList.add("correct");
+          } else {
+            span.classList.add("incorrect");
+            isCorrect = false;
+          }
+        } else if (index === inputText.length) {
+          span.classList.add("current");
+        }
+      });
+
+      console.log(currentText.length, inputText.length)
+      // Agar to‘g‘ri yozilgan bo‘lsa, backendga saqlash
+      if (isCorrect && inputText.length === currentText.length) {
+        const countdown = setInterval(() => {
+          createConfetti();
+          timer--;
+
+          if (timer < 0) {
+            clearInterval(countdown);
+          }
+        }, 1000);
+        addScorWord.textContent = 'Well done! 100 points have been added to your score'
+        addScorWord.style.color = '#28a745'
+        setTimeout(() => {
+          addScorWord.textContent = 'Receive 100 points upon completing each page'
+          addScorWord.style.color = '#ff6a00'
+        }, 9000)
+        await customAxios
+          .post("/pages/getNewPage", { pageId: pageId, bookId: bookId })
+          .then((res) => {
+            console.log(res.data)
+            if (res.data.message.startsWith("The")) {
+              alert(res.data.message);
+            }
+            createWords(
+              res.data?.data,
+              res.data.bookImg,
+              res.data.bookName,
+              res.data.data.id
+            );
+            typingInput.value = "";
+          })
+          .catch((err) => console.log(err.response.data.message));
+      }
+    });
+
+    // Dastlabki sahifani ko‘rsatish
+    displayText(currentText);
   }
 
   await customAxios
