@@ -1,32 +1,38 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Georgia', serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Georgia", serif;
 }
 
 body {
-    background-color: #f0f2f5;
-    color: #333;
-    margin-bottom: 150px;
-    margin-top: 110px;
+  background-color: #f0f2f5;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .navbar {
-    background: linear-gradient(135deg, #ff6a00, #ee0979);
-    padding: 15px;
-    display: flex;
-    height: 70px;
-    position: fixed;
-    top: 0px;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-    color: white;
+  background: linear-gradient(135deg, #ff6a00, #ee0979);
+  padding: 15px;
+  display: flex;
+  height: 70px;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
 }
 
 .navbar h1 {
-    font-size: 24px;
+  font-size: 24px;
 }
 
 .navbar h1 a {
@@ -58,17 +64,17 @@ body {
   transform: scale(1.05); /* Hover effekt */
 }
 
-.nav-title{
- display: flex;
- align-items: center;
+.nav-title {
+  display: flex;
+  align-items: center;
 }
 
-.container{
+.container {
   margin: 0 auto;
   width: 920px;
 }
 
-.quiz-quastion{
+.quiz-quastion {
   width: 900px;
   min-height: 200px;
   margin-top: 50px;
@@ -78,14 +84,14 @@ body {
   padding: 20px;
 }
 
-.quastion-container{
+.quastion-container {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
 }
 
-.question-img img{
+.question-img img {
   max-width: 500px;
   border-radius: 10px;
   height: 150px;
@@ -101,17 +107,17 @@ body {
   overflow: hidden;
 }
 
-.question-img audio{
+.question-img audio {
   width: 600px;
 }
 
-.question-word{
+.question-word {
   color: #ff6a00;
   margin-top: 20px;
   margin-bottom: 10px;
 }
 
-.quiz-options{
+.quiz-options {
   width: 900px;
   margin-top: 30px;
   border-radius: 10px;
@@ -123,19 +129,19 @@ body {
   justify-content: space-evenly;
 }
 
-.quiz-options_colum-One{
+.quiz-options_colum-One {
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
 
-.quiz-options_colum-two{
+.quiz-options_colum-two {
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
 
-.quiz-options_colum-One div{
+.quiz-options_colum-One div {
   background-color: #ff6a00;
   color: white;
   width: 300px;
@@ -151,7 +157,7 @@ body {
   padding: 10px;
 }
 
-.quiz-options_colum-two div{
+.quiz-options_colum-two div {
   background-color: #ff6a00;
   color: white;
   width: 300px;
@@ -167,19 +173,19 @@ body {
   padding: 10px;
 }
 
-.quiz-options_colum-One div:hover{
+.quiz-options_colum-One div:hover {
   transform: scale(1.1);
 }
 
-.quiz-options_colum-two div:hover{
+.quiz-options_colum-two div:hover {
   transform: scale(1.1);
 }
 
-.quiz-options_colum-One div:active{
+.quiz-options_colum-One div:active {
   background-color: #b35009;
 }
 
-.quiz-options_colum-two div:active{
+.quiz-options_colum-two div:active {
   background-color: #b35009;
 }
 
@@ -198,282 +204,331 @@ body {
   display: none;
 }
 
-.overPage h2{
+.overPage h2 {
   color: white;
   font-size: 100px;
 }
 
-
-
 footer {
-    text-align: center;
-    position: fixed;
-    bottom: 0px;
-    width: 100%;
-    padding: 20px;
-    background-color: #333;
-    color: white;
+  text-align: center;
+  width: 100%;
+  padding: 20px;
+  background-color: #333;
+  color: white;
+  margin-top: auto;
 }
 
-footer a{
+footer a {
   color: aqua;
 }
 
-
-/* ========================================================== */
-/* MEDIYA SO'ROVLARI (RESPONSIVLIK UCHUN) */
-/* ========================================================== */
-
 /* Ekran kengligi 992px va undan kichik bo'lganda (Tabletlar va kichik noutbuklar) */
 @media (max-width: 992px) {
-    body {
-        margin-top: 90px; /* Navbar balandligiga moslash */
-        margin-bottom: 120px; /* Footer balandligiga moslash */
-    }
+  body {
+    margin-top: 90px; /* Navbar balandligiga moslash */
+    margin-bottom: 120px; /* Footer balandligiga moslash */
+  }
 
-    .navbar {
-        padding: 10px 15px; /* Navbar paddingini kamaytirish */
-    }
+  .navbar {
+    padding: 10px 15px; /* Navbar paddingini kamaytirish */
+  }
 
-    .navbar h1 {
-        font-size: 22px;
-    }
+  .navbar h1 {
+    font-size: 22px;
+  }
 
-    .container {
-        width: 95%; /* Konteyner kengligini foizga o'tkazish */
-        margin: 0 auto; /* Markazga joylash */
-    }
+  .container {
+    width: 95%; /* Konteyner kengligini foizga o'tkazish */
+    margin: 0 auto; /* Markazga joylash */
+  }
 
-    .quiz-quastion {
-        width: 100%; /* Konteyner kengligiga moslash */
-        margin-top: 30px;
-        padding: 15px;
-    }
+  .quiz-quastion {
+    width: 100%; /* Konteyner kengligiga moslash */
+    margin-top: 30px;
+    padding: 15px;
+  }
 
-    .question-img img {
-        max-width: 100%; /* Rasmning o'z ota-onasiga moslashishi */
-        height: auto; /* Proportsiyasini saqlash */
-    }
+  .question-img img {
+    max-width: 100%; /* Rasmning o'z ota-onasiga moslashishi */
+    height: auto; /* Proportsiyasini saqlash */
+  }
 
-    .question-img video {
-        width: 100%; /* Videoning o'z ota-onasiga moslashishi */
-        height: 180px; /* Balandlikni kamaytirish */
-    }
+  .question-img video {
+    width: 100%; /* Videoning o'z ota-onasiga moslashishi */
+    height: 180px; /* Balandlikni kamaytirish */
+  }
 
-    .question-img audio {
-        width: 100%; /* Audioning o'z ota-onasiga moslashishi */
-    }
+  .question-img audio {
+    width: 100%; /* Audioning o'z ota-onasiga moslashishi */
+  }
 
-    .question-word {
-        font-size: 1.1em;
-        margin-top: 15px;
-        margin-bottom: 8px;
-    }
+  .question-word {
+    font-size: 1.1em;
+    margin-top: 15px;
+    margin-bottom: 8px;
+  }
 
-    .quiz-options {
-        width: 100%; /* Konteyner kengligiga moslash */
-        margin-top: 20px;
-        min-height: 250px; /* Balandlikni kamaytirish */
-    }
+  .quiz-options {
+    width: 100%; /* Konteyner kengligiga moslash */
+    margin-top: 20px;
+    min-height: 250px; /* Balandlikni kamaytirish */
+  }
 
-    .quiz-options_colum-One,
-    .quiz-options_colum-two {
-        flex-wrap: wrap; /* Variantlarni o'rash */
-        justify-content: center; /* Markazga joylash */
-        gap: 15px; /* Variantlar orasidagi bo'shliqni kamaytirish */
-    }
+  .quiz-options_colum-One,
+  .quiz-options_colum-two {
+    flex-wrap: wrap; /* Variantlarni o'rash */
+    justify-content: center; /* Markazga joylash */
+    gap: 15px; /* Variantlar orasidagi bo'shliqni kamaytirish */
+  }
 
-    .quiz-options_colum-One div,
-    .quiz-options_colum-two div {
-        width: 45%; /* Ikkita ustunga sig'ishi uchun kenglikni foizda berish */
-        min-height: 45px;
-        font-size: 18px;
-        padding: 8px;
-    }
+  .quiz-options_colum-One div,
+  .quiz-options_colum-two div {
+    width: 45%; /* Ikkita ustunga sig'ishi uchun kenglikni foizda berish */
+    min-height: 45px;
+    font-size: 18px;
+    padding: 8px;
+  }
 
-    .overPage {
-        width: 90%; /* Kenglikni foizga o'tkazish */
-        height: 500px; /* Balandlikni kamaytirish */
-        left: 5%; /* Markazga yaqinroq joylash */
-        right: 5%;
-        margin-left: auto;
-        margin-right: auto;
-        padding: 150px 20px; /* Paddingni moslash */
-    }
+  .overPage {
+    width: 90%; /* Kenglikni foizga o'tkazish */
+    height: 500px; /* Balandlikni kamaytirish */
+    left: 5%; /* Markazga yaqinroq joylash */
+    right: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 150px 20px; /* Paddingni moslash */
+  }
 
-    .overPage h2 {
-        font-size: 80px; /* Shrift o'lchamini kamaytirish */
-    }
+  .overPage h2 {
+    font-size: 80px; /* Shrift o'lchamini kamaytirish */
+  }
 
-    footer {
-        padding: 15px;
-        font-size: 0.9em;
-    }
+  footer {
+    padding: 15px;
+    font-size: 0.9em;
+  }
 }
 
-/* Ekran kengligi 768px va undan kichik bo'lganda (Kichik tabletlar va katta smartfonlar) */
+@media (max-width: 912px) {
+
+  .navbar {
+    position: absolute;
+    top: 0;
+  }
+
+  footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    font-size: 0.85em;
+  }
+}
+
 @media (max-width: 768px) {
-    body {
-        margin-top: 80px;
-        margin-bottom: 100px;
-    }
+  body {
+    margin-top: 80px;
+    margin-bottom: 100px;
+  }
 
-    .navbar {
-        flex-wrap: wrap; /* Navbar elementlarini o'rash */
-        justify-content: center; /* Markazga joylash */
-        padding: 10px;
-    }
+  .navbar {
+    flex-wrap: wrap; /* Navbar elementlarini o'rash */
+    justify-content: center; /* Markazga joylash */
+    padding: 10px;
+  }
 
-    .navbar h1 {
-        width: 100%; /* Sarlavhani to'liq kenglikka yoyish */
-        text-align: center;
-        margin-bottom: 10px;
-    }
+  .navbar h1 {
+    width: 100%; /* Sarlavhani to'liq kenglikka yoyish */
+    text-align: center;
+    margin-bottom: 10px;
+  }
 
-    .navbar h1 a {
-        font-size: 20px;
-    }
+  .navbar h1 a {
+    font-size: 20px;
+  }
 
-    .container {
-        width: 98%; /* Kenglikni yanada oshirish */
-    }
+  .container {
+    width: 98%; /* Kenglikni yanada oshirish */
+  }
 
-    .quiz-quastion {
-        margin-top: 20px;
-        padding: 10px;
-    }
+  .quiz-quastion {
+    margin-top: 20px;
+    padding: 10px;
+  }
 
-    .question-img video {
-        height: 150px; /* Balandlikni yanada kamaytirish */
-    }
+  .question-img video {
+    height: 150px; /* Balandlikni yanada kamaytirish */
+  }
 
-    .question-word {
-        font-size: 1em;
-        margin-top: 10px;
-        margin-bottom: 5px;
-    }
+  .question-word {
+    font-size: 1em;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
 
-    .quiz-options {
-        margin-top: 15px;
-        min-height: 200px;
-    }
+  .quiz-options {
+    margin-top: 15px;
+    min-height: 200px;
+  }
 
-    .quiz-options_colum-One div,
-    .quiz-options_colum-two div {
-        width: 90%; /* Bitta ustunga o'tish uchun kenglikni oshirish */
-        max-width: 300px; /* Lekin juda katta bo'lib ketmasligi uchun */
-        min-height: 40px;
-        font-size: 16px;
-        padding: 6px;
-    }
+  .quiz-options_colum-One div,
+  .quiz-options_colum-two div {
+    width: 90%; /* Bitta ustunga o'tish uchun kenglikni oshirish */
+    max-width: 300px; /* Lekin juda katta bo'lib ketmasligi uchun */
+    min-height: 40px;
+    font-size: 16px;
+    padding: 6px;
+  }
 
-    .overPage {
-        width: 95%; /* Kenglikni yanada oshirish */
-        height: 400px; /* Balandlikni kamaytirish */
-        padding: 100px 15px; /* Paddingni moslash */
-    }
+  .overPage {
+    width: 95%; /* Kenglikni yanada oshirish */
+    height: 400px; /* Balandlikni kamaytirish */
+    padding: 100px 15px; /* Paddingni moslash */
+  }
 
-    .overPage h2 {
-        font-size: 60px; /* Shrift o'lchamini kamaytirish */
-    }
+  .overPage h2 {
+    font-size: 60px; /* Shrift o'lchamini kamaytirish */
+  }
 
-    footer {
-        padding: 10px;
-        font-size: 0.85em;
-    }
+  footer {
+    padding: 10px;
+    font-size: 0.85em;
+  }
 }
 
 /* Ekran kengligi 480px va undan kichik bo'lganda (Mobil qurilmalar) */
 @media (max-width: 480px) {
-    body {
-        margin-top: 70px;
-        margin-bottom: 80px;
-    }
+  body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+  }
 
-    .navbar {
-        padding: 8px 10px;
-    }
+  .navbar {
+    padding: 8px 10px;
+    width: 100%;
+  }
 
-    .navbar h1 a {
-        font-size: 18px;
-    }
+  .navbar h1 a {
+    font-size: 18px;
+  }
 
-    .quiz-quastion {
-        margin-top: 15px;
-        padding: 8px;
-    }
+  .quiz-quastion {
+    margin-top: 15px;
+    padding: 8px;
+  }
 
-    .question-img video {
-        height: 120px;
-    }
+  .question-img video {
+    height: 120px;
+  }
 
-    .question-word {
-        font-size: 0.9em;
-    }
+  .question-word {
+    font-size: 0.9em;
+  }
 
-    .quiz-options {
-        margin-top: 10px;
-        min-height: 180px;
-        padding-top: 10px; /* Ichki paddingni moslash */
-        padding-bottom: 10px;
-    }
+  .quiz-options {
+    margin-top: 10px;
+    min-height: 180px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
 
-    .quiz-options_colum-One,
-    .quiz-options_colum-two {
-      gap: 10px; /* Bo'shliqni yanada kamaytirish */
-    }
+  .quiz-options_colum-One,
+  .quiz-options_colum-two {
+    gap: 10px;
+  }
 
-    .quiz-options_colum-One div,
-    .quiz-options_colum-two div {
-        width: 95%; /* Juda kichik ekranlarda deyarli to'liq kenglik */
-        min-height: 35px;
-        font-size: 15px;
-        padding: 5px;
-    }
+  .quiz-options_colum-One div,
+  .quiz-options_colum-two div {
+    width: 95%;
+    min-height: 35px;
+    font-size: 15px;
+    padding: 5px;
+  }
 
-    .overPage {
-        height: 300px; /* Balandlikni kamaytirish */
-        padding: 60px 10px; /* Paddingni kamaytirish */
-    }
+  .overPage {
+    height: 300px;
+    padding: 60px 10px;
+  }
 
-    .overPage h2 {
-        font-size: 40px; /* Shrift o'lchamini kamaytirish */
-    }
+  .overPage h2 {
+    font-size: 40px;
+  }
 
-    footer {
-        padding: 8px;
-        font-size: 0.75em;
-    }
+  footer {
+    padding: 8px;
+    font-size: 0.75em;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+  }
 }
 
 /* Landshaft yo'nalishdagi mobil qurilmalar uchun qo'shimcha sozlama */
 @media (max-width: 700px) and (orientation: landscape) {
-    .quiz-quastion {
-        margin-top: 10px;
-    }
-    .question-img video {
-        height: 100px; /* Landshaft rejimda video balandligini moslash */
-    }
-    .quiz-options {
-        min-height: 150px;
-        flex-direction: row; /* Qaytadan ikki ustunli bo'lishi mumkin */
-        flex-wrap: wrap;
-        justify-content: space-around;
-        align-items: center;
-        padding: 10px 5px;
-    }
-    .quiz-options_colum-One div,
-    .quiz-options_colum-two div {
-        width: 48%; /* Landshaftda 2 ta variant yonma-yon bo'lishi uchun */
-        max-width: unset; /* Max-widthni bekor qilish */
-        min-height: 40px;
-        font-size: 16px;
-    }
-    .overPage {
-        height: 250px;
-        padding: 40px 15px;
-    }
-    .overPage h2 {
-        font-size: 50px;
-    }
+  .quiz-quastion {
+    margin-top: 10px;
+  }
+  .question-img video {
+    height: 100px; /* Landshaft rejimda video balandligini moslash */
+  }
+  .quiz-options {
+    min-height: 150px;
+    flex-direction: row; /* Qaytadan ikki ustunli bo'lishi mumkin */
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 5px;
+  }
+  .quiz-options_colum-One div,
+  .quiz-options_colum-two div {
+    width: 48%; /* Landshaftda 2 ta variant yonma-yon bo'lishi uchun */
+    max-width: unset; /* Max-widthni bekor qilish */
+    min-height: 40px;
+    font-size: 16px;
+  }
+  .overPage {
+    height: 250px;
+    padding: 40px 15px;
+  }
+  .overPage h2 {
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .quiz-quastion {
+    width: 100%;
+    padding: 15px;
+  }
+  .quiz-options {
+    width: 100%;
+    padding: 15px;
+  }
+  .quiz-options_colum-One,
+  .quiz-options_colum-two {
+    flex-direction: column;
+    align-items: center;
+  }
+  .quiz-options_colum-One div,
+  .quiz-options_colum-two div {
+    width: 90%;
+    margin-bottom: 10px;
+  }
+
+  .overPage {
+    width: 80%;
+    height: 350px;
+    padding: 100px 20px;
+  }
+  .overPage h2 {
+    font-size: 60px;
+  }
+
+  footer {
+    padding: 15px;
+    font-size: 0.9em;
+    margin-top: 50px;
+  }
 }
