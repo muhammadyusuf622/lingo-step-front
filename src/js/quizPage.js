@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const quizId = localStorage.getItem("quizId");
   const overPage = document.querySelector(".overPage");
   const overScore = document.getElementById("overScore");
+  const containerWrapper = document.querySelector(".container");
   let score = 0;
 
   async function createQuestionFn(data) {
@@ -75,7 +76,8 @@ document.addEventListener("DOMContentLoaded", async () => {
             .then((res) => {
               if (res.data.message == "over") {
                 overPage.style.display = "block";
-                overScore.textContent = `10/${score}`;
+                containerWrapper.style.display = "none";
+                overScore.textContent = `5/${score}`;
                 questionFileUpload.innerHTML = "";
                 return;
               }
