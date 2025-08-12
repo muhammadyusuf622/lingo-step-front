@@ -343,8 +343,6 @@ footer {
   }
 }
 @media (max-width: 430px) {
-  body {
-  }
 
   .text-display{
     height: 250px;
