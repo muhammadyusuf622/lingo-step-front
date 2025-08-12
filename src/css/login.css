@@ -186,21 +186,46 @@ body {
 
 
 @media (max-width: 600px) {
+  body {
+    margin: 0;
+    display: block;
+    font-family: Arial, sans-serif;
+    background-image: url("https://img.freepik.com/premium-photo/headphones-notebook-with-flag-britain-blue-background_587895-454.jpg?semt=ais_items_boosted&w=740");
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+  }
+
   .container {
+    margin-top: 50px;
     padding: 15px;
   }
 
   .form-wrapper {
     padding: 20px;
+    height: 650px !important;
+    margin: 0 !important;
   }
 
   .word {
     font-size: 1rem;
   }
+  .register-form {
+    margin: 0;
+  }
+
+  .register_title {
+    margin: 0;
+  }
 
   .social-buttons {
     flex-direction: column;
     gap: 8px;
+    margin: 0;
   }
 }
 
