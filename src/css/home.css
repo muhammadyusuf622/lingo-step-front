@@ -411,7 +411,90 @@ textarea:focus {
 /* MEDIYA SO'ROVLARI (RESPONSIVLIK UCHUN) */
 /* ========================================================== */
 
-/* Umumiy sozlamalar uchun boshlang'ich breakpoint (Masalan, 1200px dan kichik ekranlar) */
+@media (max-width: 1440px) {
+  .container {
+    max-width: 1200px;
+  }
+  .navbar h1 {
+    font-size: 24px;
+  }
+  .nav-links a {
+    font-size: 16px;
+  }
+  .hero h2 {
+    font-size: 30px;
+  }
+  .hero p {
+    font-size: 18px;
+  }
+
+  .report-box {
+    height: 600px;
+    top: 100px;
+  }
+
+  .textUser {
+    bottom: 100px;
+  }
+
+  .contact_admin {
+    bottom: 30px;
+  }
+
+  .slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .slide {
+    display: none;
+    width: 84.5%;
+  }
+
+  .slide img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 1280px) {
+  .container {
+    max-width: 1100px;
+    padding: 0 16px;
+  }
+  .navbar {
+    padding: 10px 8px;
+  }
+  .nav-links {
+    gap: 18px;
+  }
+  .navbar-img-box {
+    height: 50px;
+  }
+  .navbar h1 {
+    font-size: 22px;
+  }
+
+  .navbarContainer {
+    max-width: 1050px;
+  }
+
+  .slider {
+    width: 90%;
+    height: 240px;
+  }
+
+  .report-box {
+    height: 500px;
+    top: 90px;
+  }
+  .textUser {
+    bottom: 180px;
+  }
+}
+
 @media (max-width: 1200px) {
   /* Slider kengligini moslash */
   .slider {
@@ -420,15 +503,25 @@ textarea:focus {
   }
 }
 
-/* Ekran kengligi 992px va undan kichik bo'lganda (Tabletlar va kichik noutbuklar) */
+@media (max-width: 1024px) {
+  .report-box {
+    height: 60vh;
+    top: 80px;
+  }
+
+  .textUser {
+    bottom: 160px;
+  }
+}
+
 @media (max-width: 992px) {
   body {
-    margin-top: 4.5em; /* Navbar balandligiga moslash */
-    margin-bottom: 90px; /* Footer balandligiga moslash */
+    margin-top: 4.5em; 
+    margin-bottom: 90px;
   }
 
   .navbar {
-    padding: 5px 10px; /* Navbar paddingini kamaytirish */
+    padding: 5px 10px;
   }
 
   .navbar h1 {
@@ -462,21 +555,20 @@ textarea:focus {
     font-size: 16px;
   }
 
-  /* SLIDER MUAMMOSINI HAL QILISH */
   .slider {
-    width: 95%; /* Kichik ekranlarda slider kengligini yanada moslash */
-    height: 250px; /* Slider balandligini kamaytirish */
+    width: 95%;
+    height: 250px;
     margin: 0 auto 15px;
   }
 
   .slide img {
-    height: 250px; /* Rasm balandligini slider balandligiga moslash */
-    object-fit: contain; /* Rasmni butunligicha ko'rsatish, tashqariga chiqmasligi uchun */
-    background-color: #f0f2f5; /* Agar object-fit: contain bo'lsa, bo'sh joyni to'ldirish uchun fon */
+    height: 250px;
+    object-fit: contain; 
+    background-color: #f0f2f5;
   }
 
   .level-select {
-    flex-wrap: wrap; /* Kartalarni o'ralishini ta'minlash */
+    flex-wrap: wrap;
     gap: 15px;
     margin: 15px 0;
   }
@@ -556,16 +648,55 @@ textarea:focus {
   }
 }
 
-/* Ekran kengligi 700px va undan kichik bo'lganda (Kichik tabletlar va katta smartfonlar) */
+@media (max-width: 853px) {
+  .report-box {
+    height: 750px;
+    width: 100%;
+    top: 90px;
+  }
+
+  .textUser{
+    top: 790px;
+    width: 400px;
+  }
+
+  .contact_admin{
+    bottom: 300px;
+  }
+}
+
+@media (max-width: 800px) and (orientation: landscape) {
+  .slider {
+    height: 200px;
+  }
+  .slide img {
+    height: 200px;
+  }
+  .level-select {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .level-card {
+    width: 150px;
+  }
+  .features {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(200px, 1fr)
+    ); /* 2-3 ustun qilish */
+  }
+}
+
 @media (max-width: 700px) {
   .level-select {
-    flex-direction: column; /* Kartalarni vertikal joylash */
-    align-items: center; /* Markazga joylash */
+    flex-direction: column;
+    align-items: center;
   }
 
   .level-card {
-    width: 80%; /* Kengligini oshirish */
-    max-width: 250px; /* Maksimal kenglikni cheklash */
+    width: 80%;
+    max-width: 250px;
   }
 
   .features {
@@ -592,7 +723,7 @@ textarea:focus {
   .nav-links {
     gap: 8px;
     margin-right: 0;
-    flex-wrap: wrap; /* Navbar linklarini kichik ekranlarda o'rash */
+    flex-wrap: wrap; 
     justify-content: center;
     margin-top: 5px;
   }
@@ -616,27 +747,26 @@ textarea:focus {
     font-size: 15px;
   }
 
-  /* SLIDER MUAMMOSINI HAL QILISH (eng kichik ekranlar uchun) */
   .slider {
-    width: 100%; /* To'liq kenglik */
-    height: 180px; /* Balandlikni yanada kamaytirish */
+    width: 100%;
+    height: 180px;
     margin: 0 auto 10px;
   }
 
   .slide img {
-    height: 180px; /* Rasm balandligini moslash */
-    object-fit: contain; /* Rasmni butunligicha ko'rsatish */
+    height: 180px;
+    object-fit: contain;
     background-color: #f0f2f5;
   }
 
   .level-card {
-    width: 90%; /* Mobil ekranlarda kartalarni yanada kengaytirish */
+    width: 90%;
     max-width: 200px;
     padding: 12px;
   }
 
   .features {
-    grid-template-columns: 1fr; /* Bitta ustunga o'tish */
+    grid-template-columns: 1fr;
     padding: 10px;
   }
 
@@ -657,7 +787,6 @@ textarea:focus {
     font-size: 14px;
   }
 
-  /* FOOTER VA CHAT BOX (mobil uchun) */
   footer {
     padding: 10px;
     font-size: 0.8em;
@@ -667,7 +796,7 @@ textarea:focus {
   }
 
   .contact_admin {
-    bottom: 4em; /* Footer balandligiga moslash */
+    bottom: 4em;
     right: 1em;
   }
 
@@ -711,121 +840,49 @@ textarea:focus {
   }
 }
 
-/* Landshaft yo'nalishdagi mobil qurilmalar uchun qo'shimcha sozlama */
-@media (max-width: 800px) and (orientation: landscape) {
-  .slider {
-    height: 200px; /* Landshaft rejimda slider balandligini moslash */
-  }
-  .slide img {
-    height: 200px;
-  }
-  .level-select {
-    flex-direction: row; /* Landshaftda qayta qatorga joylash */
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .level-card {
-    width: 150px; /* Qaytadan kichikroq qilish */
-  }
-  .features {
-    grid-template-columns: repeat(
-      auto-fit,
-      minmax(200px, 1fr)
-    ); /* 2-3 ustun qilish */
-  }
-}
-
-@media (max-width: 1024px) {
+@media (max-width: 430px) {
   .report-box {
-    height: 60vh;
-    top: 80px;
+    height: 600px !important;
   }
 
-  .textUser {
-    bottom: 160px;
+  .textUser{
+    top: 655px !important;
   }
 }
 
-@media (max-width: 1280px) {
-  .container {
-    max-width: 1100px;
-    padding: 0 16px;
-  }
-  .navbar {
-    padding: 10px 8px;
-  }
-  .nav-links {
-    gap: 18px;
-  }
-  .navbar-img-box {
-    height: 50px;
-  }
-  .navbar h1 {
-    font-size: 22px;
+@media (max-width: 390px) {
+  .report-box {
+    height: 500px !important;
   }
 
-  .navbarContainer {
-    max-width: 1050px;
+  .textUser{
+    top: 560px !important;
   }
+}
 
-  .slider {
-    width: 90%;
-    height: 240px;
-  }
+@media (max-width: 375px) {
 
   .report-box {
-    height: 500px;
-    top: 90px;
+    height: 450px !important;
   }
-  .textUser {
-    bottom: 180px;
+
+  .textUser{
+    top: 510px !important;
   }
 }
 
-@media (max-width: 1440px) {
-  .container {
-    max-width: 1200px;
-  }
-  .navbar h1 {
-    font-size: 24px;
-  }
-  .nav-links a {
-    font-size: 16px;
-  }
-  .hero h2 {
-    font-size: 30px;
-  }
-  .hero p {
-    font-size: 18px;
+
+@media (max-width: 360px){
+    .report-box {
+    height: 450px;
   }
 
-  .report-box {
-    height: 600px;
-    top: 100px;
-  }
-
-  .textUser {
-    bottom: 100px;
-  }
-
-  .contact_admin {
-    bottom: 30px;
-  }
-
-  .slides {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-  }
-
-  .slide {
-    display: none;
-    width: 84.5%;
-  }
-
-  .slide img {
-    width: 100%;
-    height: 280px;
-    object-fit: cover;
-    border-radius: 8px;
+  .textUser{
+    top: 510px;
   }
 }
+
+
+
+
+
