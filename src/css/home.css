@@ -842,11 +842,14 @@ textarea:focus {
 
 @media (max-width: 430px) {
   .report-box {
-    height: 600px !important;
+    top: 90px;
+    height: 400px !important;
+    width: 70%;
   }
 
   .textUser{
-    top: 655px !important;
+    width: 280px;
+    top: 450px !important;
   }
 }
 
