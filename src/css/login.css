@@ -187,13 +187,29 @@ body {
 
 @media (max-width: 600px) {
   .container {
+    margin-top: 20px;
     padding: 15px;
   }
 
   .form-wrapper {
     padding: 20px;
-    height: 650px !important;
+    height: 600px !important;
     margin: 0 !important;
+  }
+
+  .register-btn {
+    margin: 0 !important;
+  }
+
+  .form-group input,
+  .form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
   }
 
   .word {
