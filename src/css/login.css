@@ -203,3 +203,34 @@ body {
     gap: 8px;
   }
 }
+
+
+@media (max-width: 1440px) {
+  .form-wrapper {
+    height: 560px;
+  }
+
+  .register-form{
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .register-btn{
+    margin-bottom: 20px;
+  }
+
+  .title{
+    margin-bottom: 20px;
+  }
+
+  .register_title{
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+
+  .form-group{
+    margin: 0;
+  }
+}
