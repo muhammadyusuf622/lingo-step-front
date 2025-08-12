@@ -532,3 +532,35 @@ footer a {
     margin-top: 50px;
   }
 }
+
+
+
+@media (max-width: 1440px) {
+  .quiz-quastion {
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+  }
+  .quiz-options {
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+  }
+  .quiz-options_colum-One,
+  .quiz-options_colum-two {
+    flex-direction: column;
+    align-items: center;
+  }
+  .quiz-options_colum-One div,
+  .quiz-options_colum-two div {
+    width: 80%;
+    margin-bottom: 10px;
+  }
+
+  .overPage {
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 70%;
+    height: 400px;
+    padding: 120px 30px;
+  }
+}
