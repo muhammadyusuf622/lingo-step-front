@@ -541,4 +541,8 @@ footer a {
     height: 400px;
     padding: 120px 30px;
   }
+
+  footer {
+    margin-top: 50px;
+  }
 }
