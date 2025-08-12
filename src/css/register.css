@@ -207,6 +207,7 @@ body {
 @media (max-width: 1440px) {
   .form-wrapper {
     height: 560px;
+    width: 85%;
   }
 
   .register-form{
