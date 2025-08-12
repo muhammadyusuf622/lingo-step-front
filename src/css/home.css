@@ -841,15 +841,38 @@ textarea:focus {
 }
 
 @media (max-width: 430px) {
+  .hero {
+    margin-top: 50px;
+  }
+
+  .features {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .card-video_chat {
+    grid-row: auto;
+    grid-column: auto;
+  }
+
   .report-box {
     top: 90px;
     height: 400px !important;
     width: 70%;
   }
 
-  .textUser{
+  .textUser {
     width: 270px;
     top: 440px !important;
+  }
+
+  .slides {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 
