@@ -6,25 +6,47 @@ const chatMessages = document.getElementById("chat-messages");
 let userId = "";
 let username = "";
 
+// Xavfsiz matn qo'shish funksiyasi
+function createMessageElement(data, isOutgoing = false) {
+  const messageElement = document.createElement("div");
+  messageElement.classList.add("message", isOutgoing ? "outgoing" : "incoming");
+
+  if (isOutgoing) {
+    const messageText = document.createElement("p");
+    messageText.classList.add("message-text");
+    messageText.textContent = data.message; // ⚠️ innerHTML o'rniga textContent
+    const timestamp = document.createElement("span");
+    timestamp.classList.add("timestamp");
+    timestamp.textContent = data.createdAt;
+
+    messageElement.appendChild(messageText);
+    messageElement.appendChild(timestamp);
+  } else {
+    const usernameEl = document.createElement("span");
+    usernameEl.classList.add("username");
+    usernameEl.textContent = data.username;
+
+    const messageText = document.createElement("p");
+    messageText.classList.add("message-text");
+    messageText.textContent = data.message; // ⚠️ xavfsiz
+
+    const timestamp = document.createElement("span");
+    timestamp.classList.add("timestamp");
+    timestamp.textContent = data.createdAt;
+
+    messageElement.appendChild(usernameEl);
+    messageElement.appendChild(messageText);
+    messageElement.appendChild(timestamp);
+  }
+
+  chatMessages.appendChild(messageElement);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+// Avvalgi xabarlarni chiqarish
 function createDefaultMessage(array) {
   array.forEach((data) => {
-    const messageElement = document.createElement("div");
-    if (data.username == username) {
-      messageElement.classList.add("message", "outgoing");
-      messageElement.innerHTML = `
-                <p class="message-text">${data.message}</p>
-                <span class="timestamp">${data.createdAt}</span>`;
-      chatMessages.appendChild(messageElement);
-      chatMessages.scrollTop = chatMessages.scrollHeight;
-    } else {
-      messageElement.classList.add("message", "incoming");
-      messageElement.innerHTML = `
-                <span class="username">${data.username}</span>
-                <p class="message-text">${data.message}</p>
-                <span class="timestamp">${data.createdAt}</span>`;
-      chatMessages.appendChild(messageElement);
-      chatMessages.scrollTop = chatMessages.scrollHeight;
-    }
+    createMessageElement(data, data.username === username);
   });
 }
 
@@ -35,9 +57,9 @@ document.addEventListener("DOMContentLoaded", () => {
   customAxios
     .get("/auth/getUserById")
     .then((res) => {
-      console.log(res)
       username = res.data.data.username;
       userId = res.data.data.id;
+
       customAxios
         .get("/chat")
         .then((res) => {
@@ -45,19 +67,16 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         .catch((err) => console.log(err.response.data.message));
     })
-    .catch((err) => {
-      console.log(err);
-    });
+    .catch((err) => console.log(err));
 
   sendButton.addEventListener("click", () => {
     const message = messageInput.value.trim();
     if (message) {
-      socket.emit("events", { message: message, userId: userId });
+      socket.emit("events", { message: message, userId: userId, username: username });
       messageInput.value = "";
     }
   });
 
-  // Enter tugmasi bilan yuborish
   messageInput.addEventListener("keypress", (e) => {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
@@ -67,21 +86,5 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 socket.on("events", (data) => {
-  const messageElement = document.createElement("div");
-  if (data.userId == userId) {
-    messageElement.classList.add("message", "outgoing");
-    messageElement.innerHTML = `
-                <p class="message-text">${data.message}</p>
-                <span class="timestamp">${data.createAt}</span>`;
-    chatMessages.appendChild(messageElement);
-    chatMessages.scrollTop = chatMessages.scrollHeight;
-  } else {
-    messageElement.classList.add("message", "incoming");
-    messageElement.innerHTML = `
-                <span class="username">${data.username}</span>
-                <p class="message-text">${data.message}</p>
-                <span class="timestamp">${data.createAt}</span>`;
-    chatMessages.appendChild(messageElement);
-    chatMessages.scrollTop = chatMessages.scrollHeight;
-  }
+  createMessageElement(data, data.userId === userId);
 });
